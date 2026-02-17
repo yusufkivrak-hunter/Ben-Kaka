@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Taha BÜLLÜKTEMUR | Ben Taha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Animasyon Kütüphanesi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        :root {
+            --brand-blue: #2563eb;
+            --dark-bg: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--dark-bg);
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Hareketli Arka Plan Işıkları */
+        .glow-effect {
+            position: fixed;
+            z-index: -1;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: floatGlow 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 50px); }
+        }
+
+        .glass-panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-panel:hover {
+            border-color: rgba(37, 99, 235, 0.4);
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .surname-highlight {
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #fff 30%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleReveal 1.2s ease-out;
+        }
+
+        @keyframes titleReveal {
+            0% { opacity: 0; transform: translateY(30px); filter: blur(10px); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        .digital-tag {
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            padding: 4px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            display: inline-block;
+        }
+
+        .social-btn {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-btn:hover {
+            background: white;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .bs-badge {
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Özel Kaydırma Çubuğu */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+
+        .bio-segment {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid rgba(37, 99, 235, 0.3);
+            transition: border-color 0.3s;
+        }
+        .bio-segment:hover {
+            border-left-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="relative antialiased">
+
+    <!-- Arka Plan Işıkları -->
+    <div class="glow-effect top-[-10%] left-[-10%]"></div>
+    <div class="glow-effect bottom-[-10%] right-[-10%]"></div>
+
+    <!-- Navigasyon -->
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-black/40 backdrop-blur-xl transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="text-sm font-bold tracking-widest text-blue-500 uppercase transition-colors group-hover:text-cyan-400">Ben Taha</div>
+                <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded text-slate-400 font-mono">Büllüktemur</span>
+            </div>
+            <div class="flex space-x-6 text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                <a href="https://www.instagram.com/mtahabogatemur/" target="_blank" class="hover:text-white transition-all hover:tracking-[0.2em]">Instagram</a>
+                <a href="https://youtube.com/@bentaha-t6o?si=xPXyPt6zN4w-ZbY9" target="_blank" class="hover:text-white transition-all hover:tracking-[0.2em]">YouTube</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana Bölüm -->
+    <section class="pt-40 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
+                <!-- Profil Fotoğrafı Alanı -->
+                <div class="relative shrink-0" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="absolute inset-0 bg-blue-600 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
+                    <div class="relative w-48 h-64 rounded-3xl border border-white/10 overflow-hidden bg-slate-900 shadow-2xl group">
+                        <img src="https://ui-avatars.com/api/?name=Muhammed+Taha&background=0f172a&color=2563eb&size=512" 
+                             alt="Muhammed Taha Büllüktemur" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                </div>
+
+                <!-- İsim ve Sosyal Bağlantılar -->
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-4" data-aos="fade-right" data-aos-delay="200">
+                        <span class="digital-tag">Ben Taha</span>
+                        <span class="bs-badge">Brawl Stars Creator</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-light leading-tight mb-2" data-aos="fade-up" data-aos-delay="400">
+                        Muhammed Taha
+                    </h1>
+                    <h1 class="text-5xl md:text-7xl surname-highlight mb-8" data-aos="fade-up" data-aos-delay="600">
+                        BÜLLÜKTEMUR
+                    </h1>
+                    
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3" data-aos="fade-up" data-aos-delay="800">
+                        <a href="https://www.instagram.com/mtahabogatemur/" target="_blank" class="social-btn px-6 py-2 rounded-full text-xs font-bold flex items-center gap-2">
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://youtube.com/@bentaha-t6o?si=xPXyPt6zN4w-ZbY9" target="_blank" class="social-btn px-6 py-2 rounded-full text-xs font-bold flex items-center gap-2">
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube & Sosyal Kimlik Bölümü -->
+    <section class="py-12 px-6" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-panel p-8 rounded-[40px] flex flex-col md:flex-row items-center justify-between gap-8 border-2 border-red-500/10 relative overflow-hidden group">
+                <div class="absolute -right-4 -bottom-4 text-8xl opacity-5 font-black pointer-events-none uppercase italic text-white transition-all duration-700 group-hover:opacity-10 group-hover:-translate-x-10">BEN TAHA</div>
+                
+                <div class="flex items-center gap-6">
+                    <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg shadow-red-600/20 transition-transform group-hover:rotate-12">
+                        🎬
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-extrabold text-white">22.000+ Abone</h3>
+                        <p class="text-slate-400 text-sm">YouTube: Ben Taha kanalında buluşuyoruz!</p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right z-10">
+                    <p class="text-slate-300 font-semibold mb-2 italic">"Arkadaş ortamının el popo'su, dijitalin Ben Taha'sı!"</p>
+                    <a href="https://youtube.com/@bentaha-t6o?si=xPXyPt6zN4w-ZbY9" target="_blank" class="text-red-500 font-bold hover:text-red-400 text-sm tracking-widest uppercase transition-all hover:mr-2">Kanalı Gör →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parçalanmış ve Animasyonlu Hikaye Bölümü -->
+    <section class="py-12 px-6">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+            <!-- Biyografi Yazısı (Parçalanmış) -->
+            <div class="md:col-span-3 space-y-6">
+                <div class="glass-panel p-8 rounded-[30px]" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-xl font-bold mb-4 text-blue-500 uppercase tracking-tighter italic">Kökenler</h3>
+                    <p class="text-slate-400 leading-relaxed text-lg bio-segment">
+                        Bingöl'ün doğal atmosferinde yetişen Muhammed Taha, dijital dünyada <span class="text-blue-400 font-bold">"Ben Taha"</span> ismiyle bilinen bir içerik üreticisi. Ancak onun karakteri sadece ekranlardan ibaret değil.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-[30px]" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <h3 class="text-xl font-bold mb-4 text-emerald-500 uppercase tracking-tighter italic">Sosyal Kimlik</h3>
+                    <p class="text-slate-400 leading-relaxed text-lg bio-segment">
+                        Okul koridorlarında ve yakın arkadaş çevresinde samimiyetiyle tanınan Taha; mizahı ve enerjisiyle <span class="text-white font-bold italic">"el popo"</span> ve <span class="text-white font-bold italic">"ben kaka"</span> gibi kendine has lakaplarla anılıyor. Bu lakaplar, onun arkadaş ortamındaki neşeli ve doğal kimliğinin birer simgesi.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-[30px]" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="400">
+                    <h3 class="text-xl font-bold mb-4 text-amber-500 uppercase tracking-tighter italic">Vizyon</h3>
+                    <p class="text-slate-400 leading-relaxed text-lg bio-segment">
+                        Şu an <span class="text-blue-400 font-semibold">Bingöl Fen Lisesi (BFL)</span>'nde eğitim gören Taha, akademik disiplini ile <span class="text-amber-500 font-bold">Brawl Stars</span> dünyasındaki yaratıcılığını harmanlayarak 22 binden fazla aboneye ilham veriyor.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bilgi Kartları -->
+            <div class="md:col-span-2 space-y-6">
+                <div class="glass-panel p-8 rounded-[40px]" data-aos="flip-left" data-aos-delay="200">
+                    <h4 class="text-blue-500 font-bold text-xs uppercase tracking-widest mb-4">Okul Yaşamı</h4>
+                    <p class="text-white font-bold text-xl leading-tight">Bingöl Fen Lisesi</p>
+                    <p class="text-slate-500 text-sm mt-1">Fen Bilimleri Yolcusu</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-[40px]" data-aos="flip-left" data-aos-delay="400">
+                    <h4 class="text-blue-500 font-bold text-xs uppercase tracking-widest mb-4">Sosyal Lakaplar</h4>
+                    <p class="text-white font-bold text-xl leading-tight">el popo / ben kaka</p>
+                    <p class="text-slate-500 text-sm mt-1">Arkadaş Ortamı Klasikleri</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-[40px] flex items-center justify-between" data-aos="flip-left" data-aos-delay="600">
+                    <div>
+                        <h4 class="text-blue-500 font-bold text-xs uppercase tracking-widest mb-2">Şehir</h4>
+                        <p class="text-emerald-400 font-bold text-sm uppercase">Bingöl</p>
+                    </div>
+                    <div class="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center animate-bounce">
+                        📍
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center border-t border-white/5 bg-black/20">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="text-slate-600 text-[10px] tracking-[0.3em] uppercase font-bold mb-4" data-aos="fade-up">
+                M. Taha BÜLLÜKTEMUR — 2024
+            </p>
+            <div class="h-px w-12 bg-blue-600/30 mx-auto mb-4"></div>
+            <p class="text-slate-500 text-xs font-medium" data-aos="fade-up" data-aos-delay="200">
+                Yusuf Kıvrak tarafından oluşturulmuştur. Tüm hakları saklıdır.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Animasyon Scripti -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Animasyonları başlat
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Navigasyon efekti
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black/80', 'h-16');
+                nav.classList.remove('h-20');
+            } else {
+                nav.classList.remove('bg-black/80', 'h-16');
+                nav.classList.add('h-20');
+            }
+        });
+
+        console.log("Ben Taha (Muhammed Taha Büllüktemur) - Enhanced Bio & Credits Added.");
+    </script>
+</body>
+</html>
